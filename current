@@ -1,0 +1,32 @@
+import random
+
+def is_valid(number):
+    if not number.isdigit():
+        return False
+    new_n = int(number)
+    return 1 <= new_n <= 100 
+    
+def is_valid_num():
+    while True:
+        number = input("Введите число от 1 до 100: ")
+        if is_valid(number):
+            return int(number)
+        else:
+            print('А может быть все-таки введем целое число от 1 до 100?')
+        
+def compare_num():
+    num = random.randint(1, 100)
+    
+    while True:
+        n = is_valid_num()
+    
+        if n < num:
+            print('Ваше число меньше загаданного, попробуйте еще разок')
+        elif n > num:
+            print('Ваше число больше загаданного, попробуйте еще разок')
+        else:
+            print('Вы угадали, поздравляем!')
+            print('Спасибо, что играли в числовую угадайку. Еще увидимся...')
+            break
+
+compare_num()
